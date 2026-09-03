@@ -82,7 +82,5 @@ The dataset contains online retail transaction records with information includin
 - Customer ID
 - Country
 
-A calculated `SalesAmount` field was created using:
 
-```text
-SalesAmount = Quantity × UnitPrice
+```textSalesAmount = Quantity × UnitPrice
