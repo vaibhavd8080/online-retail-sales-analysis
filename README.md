@@ -81,6 +81,3 @@ The dataset contains online retail transaction records with information includin
 - Unit Price
 - Customer ID
 - Country
-
-
-```textSalesAmount = Quantity × UnitPrice
