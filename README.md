@@ -1,83 +1,106 @@
-# 📊 Online Retail Sales Analysis
+# Online Retail Sales Analysis
 
-> An end-to-end Data Analytics project using Python, Pandas, Excel, and Power BI to transform raw online retail transaction data into meaningful business insights.
+An end-to-end retail analytics project using Python, Pandas and Power BI to prepare transaction data, examine sales performance and communicate business patterns through an interactive dashboard.
 
----
+## Dashboard preview
 
-## 📌 Project Overview
+The Power BI report is organised into five analysis views:
 
-This project analyzes an online retail transaction dataset to understand sales performance, customer behavior, product performance, country-wise sales, and returns.
+- Executive Overview
+- Sales Analysis
+- Customer Analysis
+- Product Analysis
+- Returns Analysis
 
-The project follows a complete data analytics workflow:
+![Executive overview](images/executive-overview.png)
 
-**Raw Data → Data Cleaning → Data Validation → Feature Engineering → Analysis → KPI Development → Power BI Dashboard → Business Insights**
-
-Python and Pandas were used for data cleaning, transformation, validation, and analysis, while Power BI was used to create an interactive business dashboard.
-
----
-
-## 🎯 Business Problem
-
-Raw retail transaction data contains large volumes of records that need to be cleaned, structured, and analyzed before meaningful business decisions can be made.
-
-This project focuses on answering questions such as:
-
-- What is the overall sales performance?
-- How much gross and net sales were generated?
-- How do sales change over time?
-- Which countries contribute the most to sales?
-- Which products generate the highest sales?
-- Which customers contribute the most revenue?
-- How significant are returned transactions?
-- What is the return value and return rate?
-- Which areas of the business require further attention?
-
----
-
-## 🎯 Project Objectives
-
-The main objectives of this project were to:
-
-1. Clean and validate the raw retail transaction dataset.
-2. Identify and handle duplicate and missing records.
-3. Standardize data types and prepare the dataset for analysis.
-4. Create calculated fields and analytical features.
-5. Analyze sales performance over time.
-6. Analyze customer purchasing behavior.
-7. Identify high-performing products.
-8. Analyze country-level sales performance.
-9. Measure the impact of returns.
-10. Calculate important business KPIs.
-11. Build an interactive Power BI dashboard.
-12. Present the analysis as a professional Data Analyst portfolio project.
-
----
-
-# 🛠️ Tools & Technologies
-
-| Tool / Technology | Purpose |
+| Dashboard page | Preview |
 |---|---|
-| **Python** | Data cleaning, transformation and analysis |
-| **Pandas** | Data manipulation and analysis |
-| **NumPy** | Numerical operations |
-| **Jupyter Notebook** | Analysis workflow and documentation |
-| **Microsoft Excel** | Project-ready dataset |
-| **Power BI** | Interactive dashboard and visualization |
-| **Git** | Version control |
-| **GitHub** | Project hosting and portfolio |
-| **Git LFS** | Large Power BI `.pbix` file management |
+| Executive Overview | ![Executive overview](images/executive-overview.png) |
+| Sales Analysis | ![Sales analysis](images/sales-analysis.png) |
+| Customer Analysis | ![Customer analysis](images/customer-analysis.png) |
+| Product Analysis | ![Product analysis](images/product-analysis.png) |
+| Returns Analysis | ![Returns analysis](images/returns-analysis.png) |
 
----
+## Business questions
 
-# 📊 Dataset
+This project explores the following questions:
 
-The dataset contains online retail transaction records with information including:
+1. How does sales performance change over time?
+2. Which countries contribute the most sales?
+3. Which products generate the highest sales?
+4. How are sales distributed across customers?
+5. How large is the value of returned or cancelled transactions?
+6. How do gross sales, returns and net sales compare?
 
-- Invoice Number
-- Stock Code
-- Product Description
-- Quantity
-- Invoice Date
-- Unit Price
-- Customer ID
-- Country
+These are descriptive questions. The dashboard can help identify patterns, but the analysis alone does not establish why customers buy or return products.
+
+## Dataset
+
+The analysis is based on the UCI Online Retail dataset.
+
+- **Original size:** 541,909 transaction rows, as reported by the source notebook and UCI dataset page.
+- **Period:** 1 December 2010 to 9 December 2011.
+- **Currency:** British pounds sterling (GBP).
+- **Source:** [UCI Machine Learning Repository — Online Retail](https://archive.ics.uci.edu/dataset/352/online+retail).
+
+The source dataset contains invoice number, stock code, product description, quantity, invoice date, unit price, customer ID and country.
+
+## Analysis workflow
+
+The Jupyter notebook documents the following workflow:
+
+1. Load and inspect the original transaction data.
+2. Review missing values, duplicates and data types.
+3. Clean and standardise fields needed for analysis.
+4. Prepare analytical columns and validate the transformed data.
+5. Explore sales, customers, products, countries and returns.
+6. Export the prepared dataset for Power BI.
+7. Build report pages for business users.
+
+The notebook is available at [Online_Retail_Data_Cleaning_and_Analysis.ipynb](notebooks/Online_Retail_Data_Cleaning_and_Analysis.ipynb).
+
+## Key deliverables
+
+- [Open the Power BI report file](powerbi/Online_Retail_Sales_Analysis.pbix)
+- [Open the prepared Excel dataset](data/Online_Retail_Analysis_PowerBI.xlsx)
+- [View the analysis notebook](notebooks/Online_Retail_Data_Cleaning_and_Analysis.ipynb)
+- [Browse all dashboard screenshots](images/)
+
+The Power BI file and prepared Excel workbook are stored using Git LFS. To clone the repository and retrieve those files, install Git LFS first, clone the repository, then run \`git lfs pull\`.
+
+## Reproducing the notebook
+
+The notebook currently reads the original source file from \`data/Online Retail.xlsx\`. That original file is not included in this repository. To rerun the notebook:
+
+1. Download \`Online Retail.xlsx\` from the [UCI dataset page](https://archive.ics.uci.edu/dataset/352/online+retail).
+2. Place it in the repository's \`data\` folder using the exact filename \`Online Retail.xlsx\`.
+3. Open the notebook in Jupyter Notebook or Google Colab.
+4. If using Colab, update the input path to the location where you uploaded the file.
+5. Run the notebook from top to bottom.
+
+The prepared workbook in this repository is an output for the Power BI report; it is not a substitute for the original input file expected by the notebook.
+
+## Tools
+
+| Tool | Role |
+|---|---|
+| Python | Data preparation and analysis |
+| Pandas and NumPy | Data manipulation and numerical operations |
+| Jupyter Notebook | Documenting the workflow |
+| Microsoft Excel | Prepared dataset |
+| Power BI and DAX | Dashboard and measures |
+| Git, GitHub and Git LFS | Version control and large-file storage |
+
+## Limitations and interpretation
+
+- The dataset covers a historical period and should not be interpreted as current retail performance.
+- Invoice records with cancellation indicators and negative quantities require careful treatment when defining returns and sales.
+- Customer IDs are not available for every transaction in the original dataset, which limits customer-level analysis.
+- The raw source workbook is not committed; users must download it separately to rerun the notebook.
+- The Power BI report is provided as a PBIX file. The screenshots are static previews and do not reproduce slicer interactions.
+
+## Author
+
+**Vaibhav Deshmukh**  
+[GitHub profile](https://github.com/vaibhavd8080) · [LinkedIn](https://www.linkedin.com/in/vaibhav-deshmukh-211433290/)
